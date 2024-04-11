@@ -10,11 +10,11 @@ public class CollectionsExercises {
         integers.add(4); //  - add 4 as the first element of the list
         integers.add(5);
         integers.add(6);
-        integers.add(7);
         integers.add(8);
+        integers.add(2);
         integers.add(9);
         integers.add(2);
-        integers.add(3,4);
+        integers.add(2,4);
 
         System.out.print(integers.element());
         //  - then add 5, 6, 8, 2, 9 to the list
@@ -65,14 +65,14 @@ public class CollectionsExercises {
 
        languages.put(1, "TypeScript"); //  - add {1, TypeScript} entry to the map
        languages.put(2, "Kotlin"); //  - add {2, Kotlin} entry to the map
-       languages.put(3, "Pyton");//  - add {3, Python} entry to the map
+       languages.put(3, "Python");//  - add {3, Python} entry to the map
        languages.put(4, "Java"); //  - add {4, Java} entry to the map
        languages.put(5, "JavaScript");//  - add {5, JavaScript} entry to the map
        languages.put(6, "Rust");//  - add {6, Rust} entry to the map
 
        System.out.print(languages.keySet());//  - determine the set of keys from the map and print it on the screen
        System.out.print(languages.values()); //  - determine the set of values from the map and print it on the screen
-       System.out.print(languages.containsKey("English")); //  - determine whether the map contains "English" as a language and print the result on the screen
+       System.out.print(languages.containsValue("English")); //  - determine whether the map contains "English" as a language and print the result on the screen
 
        return languages; //  - return the map
        
@@ -80,6 +80,6 @@ public class CollectionsExercises {
 
     public String getName() {
         return "Collections Exercises";
-    
+    }
 }
 

@@ -1,22 +1,31 @@
 package com.cbfacademy;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.IntPredicate;
+import java.util.stream.IntStream;
 
 public class FlowControlExercises {
 
+    private static final Integer SumOfOdds = null;
+
     public List<String> fizzBuzz(List<Integer> numbers) {
         List<String> result = new ArrayList<>(); //  - Implement this method such that
-        for (int i= 0; i<=100; i++) {
-         if (i % 3 == 0 && i % 5 == 0) {
-            System.out.println("FizzBuzz");
-         } else if (i % 3 == 0) {
-            System.out.println("Fizz");
-          } else if (i % 5 == 0) {
-            System.out.println("Buzz");
+        for (int i = 0; i < numbers.size(); i++) {
+          
+          Integer number = numbers.get(i);
+
+         if (number % 3 == 0 && number % 5 == 0) {
+            result.add("FizzBuzz");
+         } else if (number % 3 == 0) {
+            result.add("Fizz");
+          } else if (number % 5 == 0) {
+            result.add("Buzz");
           } else {
-            System.out.println(i);
+            result.add(number.toString());
           }
         }
         return result; 
@@ -30,27 +39,44 @@ public class FlowControlExercises {
 
 
     public String whichMonth(Integer number) {
-        // TODO - Implement this method such that
+       String[] months= {"January", "February", "March", "April", "May", "June", 
+       "July", "August", "September", "October", "November", "December"};
+       if (number >= 1 && number <= 12) {
+        return months[number - 1];
+       } else {
+        return "Invalid month number";
+       }
+      //  Implement this method such that 
+       
         //  - it returns the month corresponding to the input ${number}
         //  - if the ${number} is invalid, the method should return "Invalid month number"
-        throw new RuntimeException("Not implemented");
-    }
+        
+      }
 
     public Map<String, Integer> sumOfOddsAndSumOfEvens() {
-        // TODO - Implement this method such that
-        //  - creates and initialises a list of 100 numbers - from 1 to 100
+        //  - it creates and initialises a list of 100 numbers - from 1 to 100
+       IntStream numbers = IntStream.range(1, 101);
+       
+        
         //  - determines the sum of all the even numbers in the list
+        int sumOfEvens = numbers.filter(i -> i % 2 == 0).sum();
         //  - determines the sum of all the odd numbers in the list
+         numbers = IntStream.range(1, 101);
+        int sumOfOdds = numbers.filter(i -> i % 2 != 0).sum();
         //  - returns a map with two entries:
         //      {"SumOfEvens", calculatedSumOfEvens}, {"SumOfOdds", calculatedSumOfOdds}
-        throw new RuntimeException("Not implemented");
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("SumOfEvens", sumOfEvens);
+        map.put("SumOfOdds", sumOfOdds);
+        return map ;
     }
 
     public List<Integer> reverse(ArrayList<Integer> numbers) {
-        // TODO - Implement this method such that
+        // - Implement this method such that
         //  - it takes an array list of integers
         //  - it returns the list in reverse order
-        throw new RuntimeException("Not implemented");
+        Collections.reverse(numbers);
+        return numbers;
     }
 
     public String getName() {
