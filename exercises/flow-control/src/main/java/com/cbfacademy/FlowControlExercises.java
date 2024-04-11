@@ -7,15 +7,27 @@ import java.util.Map;
 public class FlowControlExercises {
 
     public List<String> fizzBuzz(List<Integer> numbers) {
-        // TODO - Implement this method such that
-        //  it creates a list where for each element of the input list ${numbers}
-        //  - if the ${element} is divisible by 3, it adds “Fizz” to the list
+        List<String> result = new ArrayList<>(); //  - Implement this method such that
+        for (int i= 0; i<=100; i++) {
+         if (i % 3 == 0 && i % 5 == 0) {
+            System.out.println("FizzBuzz");
+         } else if (i % 3 == 0) {
+            System.out.println("Fizz");
+          } else if (i % 5 == 0) {
+            System.out.println("Buzz");
+          } else {
+            System.out.println(i);
+          }
+        }
+        return result; 
+      } //  it creates a list where for each element of the input list ${numbers}
+         //  - if the ${element} is divisible by 3, it adds “Fizz” to the list
         //  - if the ${element} is divisible by 5, it adds “Buzz” to the list
         //  - if the ${element} is divisible by both 3 and 5, it adds “FizzBuzz” to the list
         //  - it adds the element to the list in any other case
         //  - it returns the constructed list
-        throw new RuntimeException("Not implemented");
-    }
+        
+
 
     public String whichMonth(Integer number) {
         // TODO - Implement this method such that
